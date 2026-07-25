@@ -1,5 +1,7 @@
 # Co-momentum: Using Crowding to Time Momentum
 
+![](https://img.shields.io/badge/python-3.10%2B-informational?style=flat-square) ![](https://img.shields.io/badge/universe-7216_stocks_x_29y-informational?style=flat-square) ![](https://img.shields.io/badge/licence-MIT-informational?style=flat-square)
+
 Replication and extension of Lou-Polk co-momentum on 7,216 US equities, weekly, 1992-2020
 (~10.9M stock-week observations). Co-momentum — the average abnormal-return correlation inside
 winner and loser deciles — proxies for arbitrage crowding, and is used here as a state variable
@@ -13,6 +15,11 @@ to scale momentum exposure.
 | Sortino | 0.11 | **0.39** |
 | Max drawdown | -74.2% | **-31.4%** |
 | Ann. volatility | 20.1% | 11.4% |
+
+![Strategy comparison](assets/strategy_comparison.png)
+
+![Rolling 52-week Sharpe](assets/rolling_sharpe.png)
+*Rolling 52-week Sharpe: the overlay adds most value exactly where theory predicts — the 2008-09 crowding unwind.*
 
 - The larger relative gain in **Sortino** vs Sharpe confirms the overlay works where it should:
   cutting downside, especially the 2009 momentum crash.
@@ -28,6 +35,8 @@ to scale momentum exposure.
 2. Weekly Fama-MacBeth cross-sectional regressions.
 3. Co-momentum: rolling 52-week average pairwise correlation of Fama-French-adjusted residuals
    within winner and loser deciles (Lou-Polk).
+
+![Co-momentum series](assets/comomentum_series.png)
 4. Crowding-scaled exposure with CV-tuned sensitivity; evaluation via Sharpe/Sortino, drawdowns
    and rolling 52-week Sharpe across regimes.
 
